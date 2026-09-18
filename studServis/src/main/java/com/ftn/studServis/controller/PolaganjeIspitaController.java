@@ -3,6 +3,7 @@ package com.ftn.studServis.controller;
 import com.ftn.studServis.dto.PolaganjeIspitaDTO;
 import com.ftn.studServis.dto.PrijavaIspitaDTO;
 import com.ftn.studServis.dto.UnosOceneDTO;
+import com.ftn.studServis.model.PolaganjeIspita;
 import com.ftn.studServis.service.PolaganjeIspitaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -51,9 +52,34 @@ public class PolaganjeIspitaController {
         ));
     }
     
+    /*@PutMapping("/odobri/{id}")
+    public ResponseEntity<PolaganjeIspitaDTO> odobriOcenu(@PathVariable Long id) {
+        PolaganjeIspita p = polaganjeIspitaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Prijava nije pronađena."));
+        p.setStatus("POLOŽIO");
+        return ResponseEntity.ok(convertToDTO(polaganjeIspitaRepository.save(p)));
+    }*/
+    
+    @PutMapping("/odobri/{id}")
+    public ResponseEntity<PolaganjeIspitaDTO> odobriOcenu(@PathVariable Long id) {
+        return ResponseEntity.ok(polaganjeIspitaService.odobriOcenu(id));
+    }
+    
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> odjaviIspit(@PathVariable Long id) {
         polaganjeIspitaService.delete(id); // ili brisanje u servisu zavisno kako si nazvala metodu (npr. delete, odjaviIspit, itd.)
         return ResponseEntity.ok().build();
+    }
+    
+ // 1. Vraća listu svih jedinstvenih naziva ispitnih rokova (npr. ["Januarski 2025", "Septembarski 2026"])
+    @GetMapping("/rokovi/nazivi")
+    public ResponseEntity<List<String>> getNaziviRokova() {
+        return ResponseEntity.ok(polaganjeIspitaService.findDistinctIspitniRokovi());
+    }
+
+    // 2. Vraća sve prijave za izabrani ispitni rok
+    @GetMapping("/rok/{nazivRoka}")
+    public ResponseEntity<List<PolaganjeIspitaDTO>> getByIspitniRok(@PathVariable String nazivRoka) {
+        return ResponseEntity.ok(polaganjeIspitaService.findByIspitniRok(nazivRoka));
     }
 }

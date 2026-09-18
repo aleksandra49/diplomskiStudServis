@@ -141,8 +141,30 @@ public class PolaganjeIspitaServiceImpl implements PolaganjeIspitaService {
 
         p.setBodovi(bodovi);
         p.setOcena(ocena);
-        p.setStatus(ocena > 5 ? "POLOŽIO" : "NIJE_POLOŽIO");
+        // Umesto da odmah bude položio, stavljamo status da čeka odobrenje admina
+        p.setStatus(ocena > 5 ? "ČEKA_ODOBRENJE" : "NIJE_POLOŽIO"); 
 
         return convertToDTO(polaganjeIspitaRepository.save(p));
+    }
+    
+    @Override
+    public PolaganjeIspitaDTO odobriOcenu(Long id) {
+        PolaganjeIspita p = polaganjeIspitaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Prijava ispita nije pronađena."));
+        
+        p.setStatus("POLOŽIO");
+        return convertToDTO(polaganjeIspitaRepository.save(p));
+    }
+    
+    @Override
+    public List<String> findDistinctIspitniRokovi() {
+        return polaganjeIspitaRepository.findDistinctIspitniRokovi();
+    }
+
+    @Override
+    public List<PolaganjeIspitaDTO> findByIspitniRok(String ispitniRok) {
+        return polaganjeIspitaRepository.findByIspitniRok(ispitniRok).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 }
