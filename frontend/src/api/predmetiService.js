@@ -15,3 +15,7 @@ export const obrisiPredmet = (id) => {
 export const getNastavniciZaPredmet = (predmetId) => {
   return axiosInstance.get(`/predavanja/predmet/${predmetId}`);
 };
+export const getProfesorZaPredmet = async (predmetId) => {
+    const response = await axiosInstance.get(`/predavanja/predmet/${predmetId}`);
+    return response.data;
+};

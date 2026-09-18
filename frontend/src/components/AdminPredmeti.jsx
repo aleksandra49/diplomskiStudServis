@@ -7,6 +7,9 @@ const AdminPredmeti = () => {
   const [espb, setEspb] = useState('6');
   const [godina, setGodina] = useState('1');
 
+  // State za pretragu
+  const [searchQuery, setSearchQuery] = useState('');
+
   const [prikazaniPredmet, setPrikazaniPredmet] = useState(null);
   const [nastavniciNaPredmetu, setNastavniciNaPredmetu] = useState([]);
 
@@ -23,6 +26,27 @@ const AdminPredmeti = () => {
     }
   };
 
+  // Funkcija za pretragu predmeta po nazivu
+  const handleSearch = async (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    if (query.trim() === "") {
+      ucitajPredmete();
+      return;
+    }
+
+    try {
+      const res = await getPredmeti();
+      const filtered = res.data.filter(p => 
+        p.naziv.toLowerCase().includes(query.toLowerCase())
+      );
+      setPredmeti(filtered);
+    } catch (error) {
+      console.error("Greška pri pretrazi predmeta:", error);
+    }
+  };
+
   const handleSubmitPredmet = async (e) => {
     e.preventDefault();
     try {
@@ -34,6 +58,7 @@ const AdminPredmeti = () => {
       setNaziv('');
       setEspb('6');
       setGodina('1');
+      setSearchQuery('');
       ucitajPredmete();
       alert('Predmet uspešno dodat!');
     } catch (error) {
@@ -93,8 +118,18 @@ const AdminPredmeti = () => {
         </form>
       </div>
 
-      {/* Tabela predmeta */}
-      <h4 style={{ color: '#333', marginBottom: '10px' }}>Lista predmeta (klikni na naziv predmeta da vidiš ko ga predaje)</h4>
+      {/* Sekcija za pretragu i tabela predmeta */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+        <h4 style={{ color: '#333', margin: 0 }}>Lista predmeta (klikni na naziv predmeta da vidiš ko ga predaje)</h4>
+        <input 
+          type="text" 
+          placeholder="Pretraži po nazivu predmeta..." 
+          value={searchQuery}
+          onChange={handleSearch}
+          style={{ padding: '8px 12px', width: '250px', borderRadius: '4px', border: '1px solid #ccc', fontSize: '14px' }}
+        />
+      </div>
+
       <div style={{ overflowX: 'auto' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#fff', borderRadius: '6px', overflow: 'hidden' }}>
           <thead>
@@ -123,7 +158,7 @@ const AdminPredmeti = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="5" style={{ textAlign: 'center', padding: '15px', color: '#666' }}>Nema unetih predmeta.</td>
+                <td colSpan="5" style={{ textAlign: 'center', padding: '15px', color: '#666' }}>Nema pronađenih predmeta.</td>
               </tr>
             )}
           </tbody>

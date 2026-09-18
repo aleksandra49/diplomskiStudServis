@@ -4,7 +4,7 @@ import StudentPohadjanja from './StudentPohadjanja';
 import StudentIspiti from './StudentIspiti';
 import StudentPrijave from './StudentPrijave';
 import FinansijskaKartica from './FinansijskaKartica';
-import StudentDokumenti from './StudentDokumenti'; // Kreiraćemo ovu komponentu
+import StudentDokumenti from './StudentDokumenti'; 
 
 const StudentDashboard = ({ user }) => {
   const [activeTab, setActiveTab] = useState('profil');

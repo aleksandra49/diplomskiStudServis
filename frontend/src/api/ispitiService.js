@@ -30,3 +30,12 @@ export const getSvaPolaganja = () => {
 export const getPolaganjaPoPredmetu = (predmetId) => {
   return axiosInstance.get(`/ispiti/predmet/${predmetId}`);
 };
+
+export const getNaziviRokova = () => {
+  return axiosInstance.get('/ispiti/rokovi/nazivi');
+};
+
+export const getPrijaveZaRok = (nazivRoka) => {
+  return axiosInstance.get(`/ispiti/rok/${encodeURIComponent(nazivRoka)}`);
+};
+

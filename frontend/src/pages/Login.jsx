@@ -13,23 +13,16 @@ const Login = () => {
     setError('');
 
     try {
-      // Šaljemo prijavu na tvoj Spring Boot backend
       const response = await axios.post('http://localhost:8081/api/auth/login', {
         username: username,
         password: password,
       });
 
-      // Backend vraća KorisnikDTO: { id, username, uloga }
       const userData = response.data;
-
-      // Sačuvamo korisnika i njegovu ulogu iz baze u localStorage
       localStorage.setItem('user', JSON.stringify(userData));
-
-      // Preusmeravamo na Dashboard
       navigate('/dashboard');
     } catch (err) {
       if (err.response && err.response.data) {
-        // Prikazuje poruku sa bekena: "Neispravno korisničko ime ili lozinka."
         setError(typeof err.response.data === 'string' ? err.response.data : 'Pogrešno korisničko ime ili lozinka.');
       } else {
         setError('Problem sa povezivanjem na server.');
@@ -38,16 +31,23 @@ const Login = () => {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
-      <h2>Prijava na Studentski Servis</h2>
+    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '30px 20px', border: '1px solid #ccc', borderRadius: '8px', textAlign: 'center', backgroundColor: '#fff' }}>
+      {/* Grb dodat na login ekran */}
+      <img 
+        src="https://serbiagbc.rs/wp-content/uploads/2020/06/FTN-Logo.png" 
+        alt="Grb" 
+        style={{ height: '60px', width: 'auto', marginBottom: '15px' }} 
+      />
+      
+      <h2 style={{ marginBottom: '20px', fontSize: '20px', color: '#333' }}>Prijava na Studentski Servis</h2>
 
       {error && (
-        <div style={{ color: 'red', marginBottom: '12px', padding: '8px', backgroundColor: '#ffe6e6', borderRadius: '4px' }}>
+        <div style={{ color: 'red', marginBottom: '12px', padding: '8px', backgroundColor: '#ffe6e6', borderRadius: '4px', textAlign: 'left' }}>
           {error}
         </div>
       )}
 
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} style={{ textAlign: 'left' }}>
         <div style={{ marginBottom: '12px' }}>
           <label htmlFor="username">Korisničko ime:</label>
           <input

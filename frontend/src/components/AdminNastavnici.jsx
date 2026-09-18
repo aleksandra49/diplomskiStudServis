@@ -18,6 +18,9 @@ const AdminNastavnici = () => {
   const [email, setEmail] = useState('');
   const [zvanje, setZvanje] = useState('Profesor');
 
+  // State za pretragu
+  const [searchQuery, setSearchQuery] = useState('');
+
   const [selectedNastavnik, setSelectedNastavnik] = useState('');
   const [selectedPredmet, setSelectedPredmet] = useState('');
   const [ulogaNaPredmetu, setUlogaNaPredmetu] = useState('PROFESOR');
@@ -37,14 +40,36 @@ const AdminNastavnici = () => {
       const resPredmeti = await getPredmeti();
       setPredmeti(resPredmeti.data);
       
-      if (resNastavnici.data.length > 0) {
+      if (resNastavnici.data.length > 0 && !selectedNastavnik) {
         setSelectedNastavnik(resNastavnici.data[0].id);
       }
-      if (resPredmeti.data.length > 0) {
+      if (resPredmeti.data.length > 0 && !selectedPredmet) {
         setSelectedPredmet(resPredmeti.data[0].id);
       }
     } catch (error) {
       console.error("Greška pri učitavanju podataka:", error);
+    }
+  };
+
+  // Funkcija za pretragu nastavnika po imenu ili prezimenu (filtrira lokalno učitanu listu ili podržava API poziv ako postoji)
+  const handleSearch = async (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    if (query.trim() === "") {
+      ucitajPodatke();
+      return;
+    }
+
+    try {
+      const res = await getNastavnici();
+      const filtered = res.data.filter(n => 
+        n.ime.toLowerCase().includes(query.toLowerCase()) || 
+        n.prezime.toLowerCase().includes(query.toLowerCase())
+      );
+      setNastavnici(filtered);
+    } catch (error) {
+      console.error("Greška pri pretrazi nastavnika:", error);
     }
   };
 
@@ -55,6 +80,8 @@ const AdminNastavnici = () => {
       setIme('');
       setPrezime('');
       setEmail('');
+      setZvanje('Profesor');
+      setSearchQuery('');
       ucitajPodatke();
       alert('Nastavnik uspešno dodat!');
     } catch (error) {
@@ -68,8 +95,13 @@ const AdminNastavnici = () => {
       try {
         await obrisiNastavnika(id);
         ucitajPodatke();
+        if (prikazaniProfesor && prikazaniProfesor.id === id) {
+          setPrikazaniProfesor(null);
+          setAktivniProfesorPredmeti([]);
+        }
       } catch (error) {
         console.error("Greška pri brisanju:", error);
+        alert('Došlo je do greške pri brisanju nastavnika.');
       }
     }
   };
@@ -83,7 +115,7 @@ const AdminNastavnici = () => {
         ulogaNaPredmetu: ulogaNaPredmetu
       });
       alert('Predmet uspešno dodeljen nastavniku!');
-      if (prikazaniProfesor && prikazaniProfesor.id == selectedNastavnik) {
+      if (prikazaniProfesor && String(prikazaniProfesor.id) === String(selectedNastavnik)) {
         vidiPredmeteZaNastavnika(prikazaniProfesor);
       }
     } catch (error) {
@@ -103,12 +135,10 @@ const AdminNastavnici = () => {
     }
   };
 
-  // Nova funkcija za uklanjanje nastavnika sa predmeta
   const handleUkloniSaPredmeta = async (predavanjeId) => {
     if (window.confirm('Da li ste sigurni da želite da uklonite nastavnika sa ovog predmeta?')) {
       try {
         await ukloniPredavanjeSaNastavnika(predavanjeId);
-        // Osveži listu predmeta za trenutno izabranog profesora
         vidiPredmeteZaNastavnika(prikazaniProfesor);
       } catch (error) {
         console.error("Greška pri uklanjanju sa predmeta:", error);
@@ -185,8 +215,18 @@ const AdminNastavnici = () => {
         </form>
       </div>
 
-      {/* Tabela svih nastavnika */}
-      <h4 style={{ color: '#333', marginBottom: '10px' }}>Lista nastavnika (klikni na ime za pregled predmeta)</h4>
+      {/* Sekcija za pretragu i tabela svih nastavnika */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+        <h4 style={{ color: '#333', margin: 0 }}>Lista nastavnika (klikni na ime za pregled profila i predmeta)</h4>
+        <input 
+          type="text" 
+          placeholder="Pretraži po imenu ili prezimenu..." 
+          value={searchQuery}
+          onChange={handleSearch}
+          style={{ padding: '8px 12px', width: '250px', borderRadius: '4px', border: '1px solid #ccc', fontSize: '14px' }}
+        />
+      </div>
+
       <div style={{ overflowX: 'auto' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#fff', borderRadius: '6px', overflow: 'hidden' }}>
           <thead>
@@ -200,30 +240,46 @@ const AdminNastavnici = () => {
             </tr>
           </thead>
           <tbody>
-            {nastavnici.map((n) => (
-              <tr key={n.id} style={{ borderBottom: '1px solid #eee' }}>
-                <td style={thTdStyle}>{n.id}</td>
-                <td style={{ ...thTdStyle, color: '#007bff', cursor: 'pointer', fontWeight: 'bold' }} onClick={() => vidiPredmeteZaNastavnika(n)}>
-                  {n.ime} {n.prezime}
-                </td>
-                <td style={thTdStyle}>{n.email}</td>
-                <td style={thTdStyle}>{n.zvanje}</td>
-                <td style={thTdStyle}>{n.korisnikId || n.korisnik?.id || 'N/A'}</td>
-                <td style={thTdStyle}>
-                  <button onClick={() => handleObrisi(n.id)} style={btnDangerStyle}>Obriši</button>
-                </td>
+            {nastavnici.length > 0 ? (
+              nastavnici.map((n) => (
+                <tr key={n.id} style={{ borderBottom: '1px solid #eee' }}>
+                  <td style={thTdStyle}>{n.id}</td>
+                  <td style={{ ...thTdStyle, color: '#007bff', cursor: 'pointer', fontWeight: 'bold' }} onClick={() => vidiPredmeteZaNastavnika(n)}>
+                    {n.ime} {n.prezime}
+                  </td>
+                  <td style={thTdStyle}>{n.email}</td>
+                  <td style={thTdStyle}>{n.zvanje}</td>
+                  <td style={thTdStyle}>{n.korisnikId || n.korisnik?.id || 'N/A'}</td>
+                  <td style={thTdStyle}>
+                    <button onClick={() => handleObrisi(n.id)} style={btnDangerStyle}>Obriši</button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="6" style={{ textAlign: 'center', padding: '15px', color: '#666' }}>Nema pronađenih nastavnika.</td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>
 
-      {/* Prikaz predmeta za izabranog profesora u obliku tabele sa dugmetom za uklanjanje */}
+      {/* Detaljan prikaz izabranog profesora (Profil + Predmeti) */}
       {prikazaniProfesor && (
-        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: '#e8f4fd', borderRadius: '6px', border: '1px solid #b8daff' }}>
-          <h4 style={{ margin: '0 0 10px 0', color: '#004085' }}>
-            Predmeti koje predaje: {prikazaniProfesor.ime} {prikazaniProfesor.prezime}
+        <div style={{ marginTop: '20px', padding: '20px', backgroundColor: '#e8f4fd', borderRadius: '6px', border: '1px solid #b8daff' }}>
+          <h4 style={{ margin: '0 0 15px 0', color: '#004085' }}>
+            Dosije nastavnika: {prikazaniProfesor.ime} {prikazaniProfesor.prezime} ({prikazaniProfesor.zvanje})
           </h4>
+
+          {/* Lični podaci / Profil kartica */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '20px', padding: '15px', backgroundColor: '#fff', borderRadius: '6px', border: '1px solid #b8daff' }}>
+            <div><strong>Ime i prezime:</strong> {prikazaniProfesor.ime} {prikazaniProfesor.prezime}</div>
+            <div><strong>Zvanje:</strong> {prikazaniProfesor.zvanje}</div>
+            <div><strong>Email:</strong> {prikazaniProfesor.email}</div>
+            <div><strong>Korisnik ID:</strong> {prikazaniProfesor.korisnikId || prikazaniProfesor.korisnik?.id || 'N/A'}</div>
+          </div>
+
+          <h5 style={{ margin: '0 0 10px 0', color: '#004085' }}>Predmeti koje predaje:</h5>
           {aktivniProfesorPredmeti.length > 0 ? (
             <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#fff', borderRadius: '6px', overflow: 'hidden' }}>
               <thead>

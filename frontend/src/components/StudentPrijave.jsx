@@ -60,7 +60,6 @@ const StudentPrijave = ({ studentId }) => {
   const handleOdjava = (polaganjeId) => {
     setPoruka({ tip: '', tekst: '' });
 
-    // Poziva se API za odjavu ispita
     odjavaIspita(polaganjeId)
       .then(() => {
         setPoruka({ tip: 'uspesno', tekst: 'Ispit je uspešno odjavljen!' });
@@ -109,8 +108,8 @@ const StudentPrijave = ({ studentId }) => {
         </select>
       </div>
 
-      {/* Tabela predmeta za prijavu / odjavu */}
-      <table border="1" cellPadding="10" style={{ width: '100%', borderCollapse: 'collapse' }}>
+      {/* Tabela predmeta */}
+      <table border="1" cellPadding="12" style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
           <tr style={{ backgroundColor: '#f2f2f2' }}>
             <th style={{ textAlign: 'left' }}>Predmet</th>
@@ -152,7 +151,7 @@ const StudentPrijave = ({ studentId }) => {
                 <td style={{ textAlign: 'center' }}>{CENA_ISPITA} RSD</td>
                 <td style={{ textAlign: 'center' }}>
                   {polozeno ? (
-                    <span style={{ color: '#28a745', fontWeight: 'bold' }}>
+                    <span style={{ color: '#4b5563', fontWeight: '500' }}>
                       Položen (Ocena: {polozeno.ocena})
                     </span>
                   ) : aktivnoPolaganje ? (
@@ -160,15 +159,17 @@ const StudentPrijave = ({ studentId }) => {
                       <span style={{ color: '#888888', fontWeight: 'normal' }}>
                         Prijavljen ({aktivnoPolaganje.ispitniRok || aktivnoPolaganje.rok})
                       </span>
+                      {/* Dugme za odjavu u plavoj boji */}
                       <button
                         onClick={() => handleOdjava(aktivnoPolaganje.id)}
                         style={{
                           padding: '4px 12px',
-                          backgroundColor: '#e5e7eb',
-                          color: '#374151',
-                          border: '1px solid #d1d5db',
+                          backgroundColor: '#60a5fa',
+                          color: '#fff',
+                          border: 'none',
                           borderRadius: '4px',
                           cursor: 'pointer',
+                          fontSize: '13px',
                           fontWeight: 'normal'
                         }}
                       >
@@ -176,16 +177,18 @@ const StudentPrijave = ({ studentId }) => {
                       </button>
                     </div>
                   ) : (
+                    /* Dugme za prijavu u plavoj boji */
                     <button
                       onClick={() => handlePrijava(trenutniPredmetId)}
                       style={{
-                        padding: '6px 16px',
+                        padding: '4px 12px',
                         backgroundColor: '#60a5fa',
                         color: '#fff',
                         border: 'none',
                         borderRadius: '4px',
                         cursor: 'pointer',
-                        fontWeight: '500'
+                        fontSize: '13px',
+                        fontWeight: 'normal'
                       }}
                     >
                       Prijavi ispit

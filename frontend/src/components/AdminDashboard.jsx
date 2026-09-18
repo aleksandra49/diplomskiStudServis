@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import AdminPredmeti from './AdminPredmeti';
 import AdminNastavnici from './AdminNastavnici';
 import AdminStudenti from './AdminStudenti';
+import AdminIspitniRokovi from './AdminIspitniRokovi'; 
+import AdminOdobravanjeOcena from './AdminOdobravanjeOcena';
 
 const AdminDashboard = ({ user }) => {
   const [activeTab, setActiveTab] = useState('profil');
@@ -46,17 +48,11 @@ const AdminDashboard = ({ user }) => {
         )}
 
         {activeTab === 'rokovi' && (
-          <div style={{ padding: '25px', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-            <h3 style={{ marginTop: 0, color: '#2c3e50' }}>Kreiranje ispitnih rokova</h3>
-            <p style={{ color: '#666' }}>Ovde se definišu rokovi (npr. Januar, Jun, Septembar...).</p>
-          </div>
+          <AdminIspitniRokovi />
         )}
 
         {activeTab === 'ocene' && (
-          <div style={{ padding: '25px', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-            <h3 style={{ marginTop: 0, color: '#2c3e50' }}>Odobravanje ocena</h3>
-            <p style={{ color: '#666' }}>Pregled unetih ocena od strane profesora koje čekaju odobrenje studentske službe.</p>
-          </div>
+          <AdminOdobravanjeOcena />
         )}
       </div>
     </div>

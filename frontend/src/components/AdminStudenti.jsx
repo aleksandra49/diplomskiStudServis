@@ -221,7 +221,7 @@ const AdminStudenti = () => {
 
       {/* Sekcija za pretragu i tabela studenata */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-        <h4 style={{ color: '#333', margin: 0 }}>Lista studenata (klikni na ime za pregled predmeta)</h4>
+        <h4 style={{ color: '#333', margin: 0 }}>Lista studenata (klikni na ime za pregled profila i predmeta)</h4>
         <input 
           type="text" 
           placeholder="Pretraži po broju indeksa..." 
@@ -270,12 +270,23 @@ const AdminStudenti = () => {
         </table>
       </div>
 
-      {/* Prikaz predmeta koje student pohađa */}
+      {/* Detaljan prikaz izabranog studenta (Profil + Predmeti) */}
       {prikazaniStudent && (
-        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: '#e8f4fd', borderRadius: '6px', border: '1px solid #b8daff' }}>
-          <h4 style={{ margin: '0 0 10px 0', color: '#004085' }}>
-            Predmeti koje pohađa: {prikazaniStudent.ime} {prikazaniStudent.prezime} ({prikazaniStudent.brojIndeksa})
+        <div style={{ marginTop: '20px', padding: '20px', backgroundColor: '#e8f4fd', borderRadius: '6px', border: '1px solid #b8daff' }}>
+          <h4 style={{ margin: '0 0 15px 0', color: '#004085' }}>
+            Dosije studenta: {prikazaniStudent.ime} {prikazaniStudent.prezime} ({prikazaniStudent.brojIndeksa})
           </h4>
+
+          {/* Lični podaci / Profil kartica sa svim informacijama */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '20px', padding: '15px', backgroundColor: '#fff', borderRadius: '6px', border: '1px solid #b8daff' }}>
+            <div><strong>Ime i prezime:</strong> {prikazaniStudent.ime} {prikazaniStudent.prezime}</div>
+            <div><strong>Broj indeksa:</strong> {prikazaniStudent.brojIndeksa}</div>
+            <div><strong>Email:</strong> {prikazaniStudent.email}</div>
+            <div><strong>Godina studija:</strong> {prikazaniStudent.godinaStudija}. godina</div>
+            <div><strong>Stanje računa:</strong> {prikazaniStudent.stanjeRacuna} RSD</div>
+          </div>
+
+          <h5 style={{ margin: '0 0 10px 0', color: '#004085' }}>Predmeti koje student pohađa:</h5>
           {aktivniStudentPredmeti.length > 0 ? (
             <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: '#fff', borderRadius: '6px', overflow: 'hidden' }}>
               <thead>

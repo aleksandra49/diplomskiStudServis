@@ -22,3 +22,4 @@ export const getPredmetiZaNastavnika = (nastavnikId) => {
 export const ukloniPredavanjeSaNastavnika = (id) => {
   return axiosInstance.delete(`/predavanja/${id}`);
 };
+

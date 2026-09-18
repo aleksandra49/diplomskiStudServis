@@ -62,8 +62,8 @@ const StudentIspiti = ({ studentId }) => {
             <tr key={p.id}>
               <td>{p.predmetNaziv || p.predmet?.naziv || `Predmet #${p.predmetId}`}</td>
               <td>{p.ispitniRok || 'Redovni'}</td>
-              <td><strong>{p.ocena}</strong></td>
-              <td>{p.espb || 6}</td>
+              <td style={{ textAlign: 'center' }}><strong>{p.ocena}</strong></td>
+              <td style={{ textAlign: 'center' }}>{p.espb || 6}</td>
             </tr>
           )) : (
             <tr><td colSpan="4" style={{ textAlign: 'center' }}>Nema položenih ispita.</td></tr>
