@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { getPredmeti, dodajPredmet, obrisiPredmet, getNastavniciZaPredmet } from '../api/predmetiService';
 
 const AdminPredmeti = () => {
   const [predmeti, setPredmeti] = useState([]);
   const [naziv, setNaziv] = useState('');
   const [espb, setEspb] = useState('6');
-  const [godina, setGodina] = useState('1');
+  const [semestar, setSemestar] = useState('1'); 
 
   // State za pretragu
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,6 +24,7 @@ const AdminPredmeti = () => {
       setPredmeti(res.data);
     } catch (error) {
       console.error("Greška pri učitavanju predmeta:", error);
+      toast.error("Greška pri učitavanju predmeta.");
     }
   };
 
@@ -53,17 +55,18 @@ const AdminPredmeti = () => {
       await dodajPredmet({
         naziv,
         espb: parseInt(espb, 10),
-        godina: parseInt(godina, 10)
+        semestar: parseInt(semestar, 10) 
       });
       setNaziv('');
       setEspb('6');
-      setGodina('1');
+      setSemestar('1');
       setSearchQuery('');
       ucitajPredmete();
-      alert('Predmet uspešno dodat!');
+      
+      toast.success('Predmet uspešno dodat!');
     } catch (error) {
       console.error("Greška pri dodavanju predmeta:", error);
-      alert('Došlo je do greške.');
+      toast.error('Došlo je do greške pri dodavanju predmeta.');
     }
   };
 
@@ -72,13 +75,17 @@ const AdminPredmeti = () => {
       try {
         await obrisiPredmet(id);
         ucitajPredmete();
+        //toast poruka kojom bi se kaze d aje nesto odradjeno
+        toast.info('Predmet je uspešno obrisan.');
+
         if (prikazaniPredmet && prikazaniPredmet.id === id) {
           setPrikazaniPredmet(null);
           setNastavniciNaPredmetu([]);
         }
       } catch (error) {
         console.error("Greška pri brisanju predmeta:", error);
-        alert('Došlo je do greške pri brisanju.');
+        // alert('Došlo je do greške pri brisanju.'); (Stari alert)
+        toast.error('Došlo je do greške pri brisanju.');
       }
     }
   };
@@ -91,6 +98,7 @@ const AdminPredmeti = () => {
     } catch (error) {
       console.error("Greška pri dobijanju nastavnika za predmet:", error);
       setNastavniciNaPredmetu([]);
+      toast.error("Greška pri učitavanju nastavnika za predmet.");
     }
   };
 
@@ -104,15 +112,15 @@ const AdminPredmeti = () => {
         <form onSubmit={handleSubmitPredmet} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '15px', alignItems: 'end' }}>
           <div>
             <label style={{ display: 'block', fontSize: '13px', fontWeight: 'bold', marginBottom: '5px' }}>Naziv predmeta:</label>
-            <input type="text" value={naziv} onChange={(e) => setNaziv(e.target.value)} required style={inputStyle} />
+            <input type="text" value={naziv} onChange={(e) => setNaziv(e.target.value)} required style={inputStyle} placeholder="npr. Matematika" />
           </div>
           <div>
             <label style={{ display: 'block', fontSize: '13px', fontWeight: 'bold', marginBottom: '5px' }}>ESPB:</label>
             <input type="number" min="1" max="30" value={espb} onChange={(e) => setEspb(e.target.value)} required style={inputStyle} />
           </div>
           <div>
-            <label style={{ display: 'block', fontSize: '13px', fontWeight: 'bold', marginBottom: '5px' }}>Godina:</label>
-            <input type="number" min="1" max="6" value={godina} onChange={(e) => setGodina(e.target.value)} required style={inputStyle} />
+            <label style={{ display: 'block', fontSize: '13px', fontWeight: 'bold', marginBottom: '5px' }}>Semestar:</label>
+            <input type="number" min="1" max="8" value={semestar} onChange={(e) => setSemestar(e.target.value)} required style={inputStyle} />
           </div>
           <button type="submit" style={btnPrimaryStyle}>Sačuvaj predmet</button>
         </form>
@@ -137,7 +145,7 @@ const AdminPredmeti = () => {
               <th style={thTdStyle}>ID</th>
               <th style={thTdStyle}>Naziv predmeta</th>
               <th style={thTdStyle}>ESPB</th>
-              <th style={thTdStyle}>Godina</th>
+              <th style={thTdStyle}>Semestar</th>
               <th style={thTdStyle}>Akcija</th>
             </tr>
           </thead>
@@ -150,7 +158,7 @@ const AdminPredmeti = () => {
                     {p.naziv}
                   </td>
                   <td style={thTdStyle}>{p.espb}</td>
-                  <td style={thTdStyle}>{p.godina}</td>
+                  <td style={thTdStyle}>{p.semestar}</td>
                   <td style={thTdStyle}>
                     <button onClick={() => handleObrisiPredmet(p.id)} style={btnDangerStyle}>Obriši</button>
                   </td>
@@ -187,7 +195,7 @@ const AdminPredmeti = () => {
                     <td style={thTdStyle}>{index + 1}</td>
                     <td style={thTdStyle}>{n.nastavnikImePrezime || `${n.ime || ''} ${n.prezime || ''}`.trim() || 'N/A'}</td>
                     <td style={thTdStyle}>{n.zvanje || 'N/A'}</td>
-                    <td style={thTdStyle}><strong>{n.ulogaNaPredmetu}</strong></td>
+                    <th style={thTdStyle}><strong>{n.ulogaNaPredmetu}</strong></th>
                   </tr>
                 ))}
               </tbody>
@@ -229,6 +237,7 @@ const btnDangerStyle = {
   cursor: 'pointer',
   fontSize: '12px'
 };
+
 
 const thTdStyle = {
   padding: '12px',
