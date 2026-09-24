@@ -2,9 +2,11 @@ package com.ftn.studServis.service.impl;
 
 import com.ftn.studServis.dto.PohadjanjePredmetaDTO;
 import com.ftn.studServis.model.PohadjanjePredmeta;
+import com.ftn.studServis.model.PredavanjePredmeta; 
 import com.ftn.studServis.model.Predmet;
 import com.ftn.studServis.model.Student;
 import com.ftn.studServis.repository.PohadjanjePredmetaRepository;
+import com.ftn.studServis.repository.PredavanjePredmetaRepository; 
 import com.ftn.studServis.repository.PredmetRepository;
 import com.ftn.studServis.repository.StudentRepository;
 import com.ftn.studServis.service.PohadjanjePredmetaService;
@@ -26,15 +28,31 @@ public class PohadjanjePredmetaServiceImpl implements PohadjanjePredmetaService 
     @Autowired
     private PredmetRepository predmetRepository;
 
+    @Autowired
+    private PredavanjePredmetaRepository predavanjePredmetaRepository; 
+
     private PohadjanjePredmetaDTO convertToDTO(PohadjanjePredmeta p) {
         String studentInfo = p.getStudent().getBrojIndeksa() + " " + p.getStudent().getIme() + " " + p.getStudent().getPrezime();
+        
+        // 1. Pronađemo profesora/nastavnika za dati predmet
+        String profesorImePrezime = "Nije naznačen";
+        List<PredavanjePredmeta> predavanja = predavanjePredmetaRepository.findByPredmetId(p.getPredmet().getId());
+        if (predavanja != null && !predavanja.isEmpty()) {
+            PredavanjePredmeta prvoPredavanje = predavanja.get(0);
+            if (prvoPredavanje.getNastavnik() != null) {
+                profesorImePrezime = prvoPredavanje.getNastavnik().getIme() + " " + prvoPredavanje.getNastavnik().getPrezime();
+            }
+        }
+
+        // 2. Vraćamo DTO sa novim konstruktorom (7 argumenata)
         return new PohadjanjePredmetaDTO(
             p.getId(),
             p.getStudent().getId(),
             studentInfo,
             p.getPredmet().getId(),
             p.getPredmet().getNaziv(),
-            p.getSkolskaGodina()
+            p.getSkolskaGodina(),
+            profesorImePrezime 
         );
     }
 
@@ -64,9 +82,8 @@ public class PohadjanjePredmetaServiceImpl implements PohadjanjePredmetaService 
         p.setStudent(student);
         p.setPredmet(predmet);
         
-        // Ako školska godina nije poslata ili je null, postavljamo tekuću godinu kao ceo broj (npr. 2026)
         if (dto.getSkolskaGodina() == null) {
-            p.setSkolskaGodina(2026); // Trenutna godina
+            p.setSkolskaGodina(2026);
         } else {
             p.setSkolskaGodina(dto.getSkolskaGodina());
         }

@@ -7,6 +7,8 @@ public class PohadjanjePredmetaDTO {
     private Long predmetId;
     private String predmetNaziv;
     private Integer skolskaGodina;
+    
+    private String profesorImePrezime; // Novo polje
 
     public PohadjanjePredmetaDTO() {}
 
@@ -18,8 +20,22 @@ public class PohadjanjePredmetaDTO {
         this.predmetNaziv = predmetNaziv;
         this.skolskaGodina = skolskaGodina;
     }
+    
+    
 
-    public Long getId() { return id; }
+    public PohadjanjePredmetaDTO(Long id, Long studentId, String studentIndeksIme, Long predmetId, String predmetNaziv,
+			Integer skolskaGodina, String profesorImePrezime) {
+		super();
+		this.id = id;
+		this.studentId = studentId;
+		this.studentIndeksIme = studentIndeksIme;
+		this.predmetId = predmetId;
+		this.predmetNaziv = predmetNaziv;
+		this.skolskaGodina = skolskaGodina;
+		this.profesorImePrezime = profesorImePrezime;
+	}
+
+	public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
     public Long getStudentId() { return studentId; }
@@ -36,4 +52,14 @@ public class PohadjanjePredmetaDTO {
 
     public Integer getSkolskaGodina() { return skolskaGodina; }
     public void setSkolskaGodina(Integer skolskaGodina) { this.skolskaGodina = skolskaGodina; }
+
+	public String getProfesorImePrezime() {
+		return profesorImePrezime;
+	}
+
+	public void setProfesorImePrezime(String profesorImePrezime) {
+		this.profesorImePrezime = profesorImePrezime;
+	}
+    
+    
 }
