@@ -15,7 +15,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('Login Komponenta - Kompletan testスイート (Suite)', () => {
+describe('Login Komponenta - Kompletan test Suite', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     localStorage.clear();
@@ -120,6 +120,7 @@ describe('Login Komponenta - Kompletan testスイート (Suite)', () => {
     //necemo staviti da pise smao red vec da bude rgb vrednost, jer jdsom konvertuje ali ovako cemo da olaksamo da ne puca
     //expect(errorMessage).toHaveStyle('color: red');
     expect(errorMessage).toHaveStyle('color: rgb(255, 0, 0)');
+    
   });
 
 

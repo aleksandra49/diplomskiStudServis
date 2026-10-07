@@ -1,4 +1,4 @@
-import axiosInstance from './axiosInstance';
+import axiosInstance from '../api/axiosInstance';
 import {
   getIspiti,
   getIspitiByStudent,
@@ -6,20 +6,20 @@ import {
   unosOcene,
   odjavaIspita,
   getPrijaveByPredmet,
+  getSvaPolaganja,
   getNaziviRokova,
   getPrijaveZaRok
-} from './ispitiService';
+} from '../api/ispitiService';
 
 // ==========================================
-// JEDINIČNI (UNIT) TESTOVI
+// JEDINIČNI (UNIT) TESTOVI ZA ISPITI SERVICE
 // ==========================================
-// Zašto su ovo jedinični testovi?
-// Zato što testiramo isključivo funkcije unutar API servisa za ispite, izolovano od bilo kakvih 
-// vizuelnih komponenti ili formi. Proveravamo ispravnost slanja GET, POST, PUT i DELETE zahteva, 
-// prosleđivanje parametara, kao i transformaciju podataka (npr. encodeURIComponent).
+// Testiramo isključivo funkcije unutar API servisa za ispite, izolovano od komponenti.
+// Proveravamo ispravnost slanja GET, POST, PUT i DELETE zahteva, prosleđivanje 
+// parametara i enkodovanje URL-ova.
 // ==========================================
 
-jest.mock('./axiosInstance');
+jest.mock('../api/axiosInstance');
 
 describe('Ispiti Service - Unit testovi', () => {
 
@@ -34,6 +34,15 @@ describe('Ispiti Service - Unit testovi', () => {
 
     expect(axiosInstance.get).toHaveBeenCalledWith('/ispiti');
     expect(result.data.length).toBe(1);
+  });
+
+  test('getIspitiByStudent šalje GET zahtev sa ID-jem studenta', async () => {
+    const studentId = 5;
+    axiosInstance.get.mockResolvedValueOnce({ data: [] });
+
+    await getIspitiByStudent(studentId);
+
+    expect(axiosInstance.get).toHaveBeenCalledWith(`/ispiti/student/${studentId}`);
   });
 
   test('prijavaIspita šalje POST zahtev sa podacima prijave', async () => {
@@ -65,6 +74,32 @@ describe('Ispiti Service - Unit testovi', () => {
     await odjavaIspita(polaganjeId);
 
     expect(axiosInstance.delete).toHaveBeenCalledWith(`/ispiti/${polaganjeId}`);
+  });
+
+  test('getPrijaveByPredmet šalje GET zahtev sa ID-jem predmeta', async () => {
+    const predmetId = 3;
+    axiosInstance.get.mockResolvedValueOnce({ data: [] });
+
+    await getPrijaveByPredmet(predmetId);
+
+    expect(axiosInstance.get).toHaveBeenCalledWith(`/ispiti/predmet/${predmetId}`);
+  });
+
+  test('getSvaPolaganja šalje GET zahtev za sva polaganja', async () => {
+    axiosInstance.get.mockResolvedValueOnce({ data: [] });
+
+    await getSvaPolaganja();
+
+    expect(axiosInstance.get).toHaveBeenCalledWith('/ispiti');
+  });
+
+  test('getNaziviRokova šalje GET zahtev za nazive rokova', async () => {
+    axiosInstance.get.mockResolvedValueOnce({ data: ['Januar', 'Februar'] });
+
+    const result = await getNaziviRokova();
+
+    expect(axiosInstance.get).toHaveBeenCalledWith('/ispiti/rokovi/nazivi');
+    expect(result.data.length).toBe(2);
   });
 
   test('getPrijaveZaRok ispravno enkoduje naziv roka sa razmacima u URL', async () => {

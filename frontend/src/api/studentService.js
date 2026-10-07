@@ -1,4 +1,5 @@
 import axiosInstance from './axiosInstance';
+import axios from 'axios';
 
 export const getStudentByKorisnikId = (korisnikId) => {
   return axiosInstance.get(`/studenti/korisnik/${korisnikId}`);

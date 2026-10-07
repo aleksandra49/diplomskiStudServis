@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/Login.css'; // Ovde uvozite CSS fajl
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -31,51 +32,48 @@ const Login = () => {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '30px 20px', border: '1px solid #ccc', borderRadius: '8px', textAlign: 'center', backgroundColor: '#fff' }}>
+    <div className="login-container">
       {/* Grb dodat na login ekran */}
       <img 
         src="https://serbiagbc.rs/wp-content/uploads/2020/06/FTN-Logo.png" 
         alt="Grb" 
-        style={{ height: '60px', width: 'auto', marginBottom: '15px' }} 
+        className="login-logo" 
       />
       
-      <h2 style={{ marginBottom: '20px', fontSize: '20px', color: '#333' }}>Prijava na Studentski Servis</h2>
+      <h2 className="login-title">Prijava na Studentski Servis</h2>
 
       {error && (
-        <div style={{ color: 'red', marginBottom: '12px', padding: '8px', backgroundColor: '#ffe6e6', borderRadius: '4px', textAlign: 'left' }}>
+        <div className="error-box" style={{ color: 'rgb(255, 0, 0)' }}>
           {error}
         </div>
       )}
 
-      <form onSubmit={handleLogin} style={{ textAlign: 'left' }}>
-        <div style={{ marginBottom: '12px' }}>
+      <form onSubmit={handleLogin} className="login-form">
+        <div className="form-group">
           <label htmlFor="username">Korisničko ime:</label>
           <input
             id="username"
             type="text"
-            style={{ width: '100%', padding: '8px', marginTop: '4px', boxSizing: 'border-box' }}
+            className="form-input"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
           />
         </div>
 
-        <div style={{ marginBottom: '16px' }}>
+        <div className="form-group-password">
           <label htmlFor="password">Lozinka:</label>
           <input
             id="password"
             type="password"
-            style={{ width: '100%', padding: '8px', marginTop: '4px', boxSizing: 'border-box' }}
+            className="form-input"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
 
-        <button 
-          type="submit" 
-          style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
-        >
+        <button type="submit" className="login-button">
           Prijavi se
         </button>
       </form>

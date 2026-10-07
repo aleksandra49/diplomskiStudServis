@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getNaziviRokova, getPrijaveZaRok, prijavaIspita } from '../api/ispitiService'; // Prilagodi putanju do tvog servisa
-import { getStudenti } from '../api/studentiService'; // Putanja do studenata
-import { getPredmeti } from '../api/predmetiService'; // Putanja do predmeta
+import { getNaziviRokova, getPrijaveZaRok, prijavaIspita } from '../api/ispitiService';  
+import { getStudenti } from '../api/studentiService'; 
+import { getPredmeti } from '../api/predmetiService'; 
 
 const AdminIspitniRokovi = () => {
   const [rokovi, setRokovi] = useState([]);

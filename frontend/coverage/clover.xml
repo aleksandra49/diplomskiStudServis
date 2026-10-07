@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1791400226014" clover="3.2.0">
+  <project timestamp="1791400226015" name="All files">
+    <metrics statements="806" coveredstatements="730" conditionals="326" coveredconditionals="247" methods="233" coveredmethods="209" elements="1365" coveredelements="1186" complexity="0" loc="806" ncloc="806" packages="4" files="28" classes="28"/>
+    <package name="src">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="App.jsx" path="D:\diplomski\frontend\src\App.jsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.api">
+      <metrics statements="92" coveredstatements="90" conditionals="1" coveredconditionals="1" methods="41" coveredmethods="39"/>
+      <file name="axiosInstance.js" path="D:\diplomski\frontend\src\api\axiosInstance.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="24" type="stmt"/>
+        <line num="3" count="24" type="stmt"/>
+        <line num="10" count="24" type="stmt"/>
+      </file>
+      <file name="dokumentiService.js" path="D:\diplomski\frontend\src\api\dokumentiService.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+      <file name="ispitiService.js" path="D:\diplomski\frontend\src\api\ispitiService.js">
+        <metrics statements="20" coveredstatements="18" conditionals="1" coveredconditionals="1" methods="11" coveredmethods="9"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+      </file>
+      <file name="nastavniciService.js" path="D:\diplomski\frontend\src\api\nastavniciService.js">
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+      </file>
+      <file name="nastavnikService.js" path="D:\diplomski\frontend\src\api\nastavnikService.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="pohadjanjaService.js" path="D:\diplomski\frontend\src\api\pohadjanjaService.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="predmetiService.js" path="D:\diplomski\frontend\src\api\predmetiService.js">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="1" count="8" type="stmt"/>
+        <line num="3" count="8" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
+      <file name="studentService.js" path="D:\diplomski\frontend\src\api\studentService.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+      <file name="studentiService.js" path="D:\diplomski\frontend\src\api\studentiService.js">
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+      </file>
+      <file name="transakcijeService.js" path="D:\diplomski\frontend\src\api\transakcijeService.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="674" coveredstatements="601" conditionals="312" coveredconditionals="236" methods="186" coveredmethods="164"/>
+      <file name="AdminDashboard.jsx" path="D:\diplomski\frontend\src\components\AdminDashboard.jsx">
+        <metrics statements="16" coveredstatements="15" conditionals="19" coveredconditionals="17" methods="8" coveredmethods="7"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="62" count="60" type="stmt"/>
+        <line num="73" count="6" type="stmt"/>
+      </file>
+      <file name="AdminIspitniRokovi.jsx" path="D:\diplomski\frontend\src\components\AdminIspitniRokovi.jsx">
+        <metrics statements="67" coveredstatements="58" conditionals="20" coveredconditionals="13" methods="15" coveredmethods="12"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="26" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="33" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="5" type="stmt"/>
+        <line num="36" count="5" type="stmt"/>
+        <line num="37" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="44" count="12" type="stmt"/>
+        <line num="45" count="7" type="stmt"/>
+        <line num="46" count="7" type="stmt"/>
+        <line num="47" count="7" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="54" count="12" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="60" count="12" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="64" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="101" count="7" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="110" count="7" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="135" count="14" type="stmt"/>
+        <line num="156" count="3" type="stmt"/>
+        <line num="159" count="3" type="stmt"/>
+        <line num="189" count="6" type="stmt"/>
+        <line num="198" count="6" type="stmt"/>
+        <line num="209" count="6" type="stmt"/>
+        <line num="215" count="6" type="stmt"/>
+      </file>
+      <file name="AdminNastavnici.jsx" path="D:\diplomski\frontend\src\components\AdminNastavnici.jsx">
+        <metrics statements="106" coveredstatements="90" conditionals="30" coveredconditionals="22" methods="24" coveredmethods="20"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="66" type="stmt"/>
+        <line num="14" count="66" type="stmt"/>
+        <line num="16" count="66" type="stmt"/>
+        <line num="17" count="66" type="stmt"/>
+        <line num="18" count="66" type="stmt"/>
+        <line num="19" count="66" type="stmt"/>
+        <line num="22" count="66" type="stmt"/>
+        <line num="24" count="66" type="stmt"/>
+        <line num="25" count="66" type="stmt"/>
+        <line num="26" count="66" type="stmt"/>
+        <line num="28" count="66" type="stmt"/>
+        <line num="29" count="66" type="stmt"/>
+        <line num="31" count="66" type="stmt"/>
+        <line num="32" count="9" type="stmt"/>
+        <line num="35" count="66" type="stmt"/>
+        <line num="36" count="12" type="stmt"/>
+        <line num="37" count="12" type="stmt"/>
+        <line num="38" count="11" type="stmt"/>
+        <line num="40" count="11" type="stmt"/>
+        <line num="41" count="11" type="stmt"/>
+        <line num="43" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="44" count="8" type="stmt"/>
+        <line num="46" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="47" count="8" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="55" count="66" type="stmt"/>
+        <line num="56" count="6" type="stmt"/>
+        <line num="57" count="6" type="stmt"/>
+        <line num="59" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="64" count="5" type="stmt"/>
+        <line num="65" count="5" type="stmt"/>
+        <line num="66" count="5" type="stmt"/>
+        <line num="67" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="5" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="76" count="66" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="93" count="66" type="stmt"/>
+        <line num="94" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="98" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="109" count="66" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="111" count="1" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+        <line num="117" count="1" type="stmt"/>
+        <line num="118" count="1" type="cond" truecount="1" falsecount="2"/>
+        <line num="119" count="0" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="127" count="66" type="stmt"/>
+        <line num="128" count="4" type="stmt"/>
+        <line num="129" count="4" type="stmt"/>
+        <line num="130" count="4" type="stmt"/>
+        <line num="131" count="4" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="134" count="0" type="stmt"/>
+        <line num="138" count="66" type="stmt"/>
+        <line num="139" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="140" count="1" type="stmt"/>
+        <line num="141" count="1" type="stmt"/>
+        <line num="142" count="1" type="stmt"/>
+        <line num="144" count="0" type="stmt"/>
+        <line num="145" count="0" type="stmt"/>
+        <line num="160" count="5" type="stmt"/>
+        <line num="164" count="9" type="stmt"/>
+        <line num="168" count="14" type="stmt"/>
+        <line num="172" count="0" type="stmt"/>
+        <line num="189" count="0" type="stmt"/>
+        <line num="191" count="104" type="stmt"/>
+        <line num="199" count="0" type="stmt"/>
+        <line num="201" count="114" type="stmt"/>
+        <line num="209" count="0" type="stmt"/>
+        <line num="245" count="104" type="stmt"/>
+        <line num="247" count="3" type="stmt"/>
+        <line num="254" count="2" type="stmt"/>
+        <line num="295" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="301" count="1" type="stmt"/>
+        <line num="320" count="6" type="stmt"/>
+        <line num="329" count="6" type="stmt"/>
+        <line num="339" count="6" type="stmt"/>
+        <line num="349" count="6" type="stmt"/>
+        <line num="355" count="9" type="stmt"/>
+      </file>
+      <file name="AdminOdobravanjeOcena.jsx" path="D:\diplomski\frontend\src\components\AdminOdobravanjeOcena.jsx">
+        <metrics statements="27" coveredstatements="25" conditionals="6" coveredconditionals="4" methods="7" coveredmethods="7"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="24" count="9" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="40" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="5" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="112" count="6" type="stmt"/>
+      </file>
+      <file name="AdminPredmeti.jsx" path="D:\diplomski\frontend\src\components\AdminPredmeti.jsx">
+        <metrics statements="74" coveredstatements="69" conditionals="19" coveredconditionals="18" methods="15" coveredmethods="13"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="100" type="stmt"/>
+        <line num="7" count="100" type="stmt"/>
+        <line num="8" count="100" type="stmt"/>
+        <line num="9" count="100" type="stmt"/>
+        <line num="12" count="100" type="stmt"/>
+        <line num="14" count="100" type="stmt"/>
+        <line num="15" count="100" type="stmt"/>
+        <line num="17" count="100" type="stmt"/>
+        <line num="18" count="10" type="stmt"/>
+        <line num="21" count="100" type="stmt"/>
+        <line num="22" count="14" type="stmt"/>
+        <line num="23" count="14" type="stmt"/>
+        <line num="24" count="13" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="32" count="100" type="stmt"/>
+        <line num="33" count="27" type="stmt"/>
+        <line num="34" count="27" type="stmt"/>
+        <line num="36" count="27" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="41" count="25" type="stmt"/>
+        <line num="42" count="25" type="stmt"/>
+        <line num="43" count="24" type="stmt"/>
+        <line num="44" count="48" type="stmt"/>
+        <line num="46" count="24" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="52" count="100" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="73" count="100" type="stmt"/>
+        <line num="74" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="76" count="2" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="81" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="93" count="100" type="stmt"/>
+        <line num="94" count="3" type="stmt"/>
+        <line num="95" count="3" type="stmt"/>
+        <line num="96" count="3" type="stmt"/>
+        <line num="97" count="3" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="115" count="20" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="155" count="98" type="stmt"/>
+        <line num="157" count="3" type="stmt"/>
+        <line num="163" count="3" type="stmt"/>
+        <line num="194" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="212" count="6" type="stmt"/>
+        <line num="221" count="6" type="stmt"/>
+        <line num="231" count="6" type="stmt"/>
+        <line num="242" count="6" type="stmt"/>
+        <line num="248" count="10" type="stmt"/>
+      </file>
+      <file name="AdminStudenti.jsx" path="D:\diplomski\frontend\src\components\AdminStudenti.jsx">
+        <metrics statements="109" coveredstatements="89" conditionals="24" coveredconditionals="15" methods="24" coveredmethods="21"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="14" count="143" type="stmt"/>
+        <line num="15" count="143" type="stmt"/>
+        <line num="17" count="143" type="stmt"/>
+        <line num="18" count="143" type="stmt"/>
+        <line num="19" count="143" type="stmt"/>
+        <line num="20" count="143" type="stmt"/>
+        <line num="21" count="143" type="stmt"/>
+        <line num="22" count="143" type="stmt"/>
+        <line num="25" count="143" type="stmt"/>
+        <line num="27" count="143" type="stmt"/>
+        <line num="28" count="143" type="stmt"/>
+        <line num="30" count="143" type="stmt"/>
+        <line num="31" count="143" type="stmt"/>
+        <line num="33" count="143" type="stmt"/>
+        <line num="34" count="10" type="stmt"/>
+        <line num="37" count="143" type="stmt"/>
+        <line num="38" count="12" type="stmt"/>
+        <line num="39" count="12" type="stmt"/>
+        <line num="40" count="11" type="stmt"/>
+        <line num="42" count="11" type="stmt"/>
+        <line num="43" count="11" type="stmt"/>
+        <line num="45" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="46" count="8" type="stmt"/>
+        <line num="48" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="49" count="9" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="57" count="143" type="stmt"/>
+        <line num="58" count="7" type="stmt"/>
+        <line num="59" count="7" type="stmt"/>
+        <line num="61" count="7" type="cond" truecount="0" falsecount="1"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="66" count="7" type="stmt"/>
+        <line num="67" count="7" type="stmt"/>
+        <line num="68" count="7" type="stmt"/>
+        <line num="70" count="6" type="stmt"/>
+        <line num="74" count="143" type="stmt"/>
+        <line num="75" count="3" type="stmt"/>
+        <line num="76" count="3" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
+        <line num="86" count="3" type="stmt"/>
+        <line num="87" count="2" type="stmt"/>
+        <line num="88" count="2" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
+        <line num="90" count="2" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
+        <line num="92" count="2" type="stmt"/>
+        <line num="93" count="2" type="stmt"/>
+        <line num="94" count="2" type="stmt"/>
+        <line num="95" count="2" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="102" count="143" type="stmt"/>
+        <line num="103" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+        <line num="107" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="112" count="0" type="stmt"/>
+        <line num="113" count="0" type="stmt"/>
+        <line num="118" count="143" type="stmt"/>
+        <line num="119" count="1" type="stmt"/>
+        <line num="120" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="126" count="1" type="cond" truecount="1" falsecount="2"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="135" count="143" type="stmt"/>
+        <line num="136" count="3" type="stmt"/>
+        <line num="137" count="3" type="stmt"/>
+        <line num="138" count="3" type="stmt"/>
+        <line num="139" count="3" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="146" count="143" type="stmt"/>
+        <line num="147" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="148" count="1" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="150" count="1" type="stmt"/>
+        <line num="152" count="0" type="stmt"/>
+        <line num="153" count="0" type="stmt"/>
+        <line num="168" count="16" type="stmt"/>
+        <line num="172" count="23" type="stmt"/>
+        <line num="176" count="47" type="stmt"/>
+        <line num="180" count="21" type="stmt"/>
+        <line num="184" count="2" type="stmt"/>
+        <line num="188" count="0" type="stmt"/>
+        <line num="200" count="0" type="stmt"/>
+        <line num="202" count="175" type="stmt"/>
+        <line num="210" count="0" type="stmt"/>
+        <line num="212" count="224" type="stmt"/>
+        <line num="250" count="175" type="stmt"/>
+        <line num="252" count="2" type="stmt"/>
+        <line num="260" count="1" type="stmt"/>
+        <line num="301" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="306" count="1" type="stmt"/>
+        <line num="325" count="6" type="stmt"/>
+        <line num="334" count="6" type="stmt"/>
+        <line num="344" count="6" type="stmt"/>
+        <line num="354" count="6" type="stmt"/>
+        <line num="360" count="10" type="stmt"/>
+      </file>
+      <file name="FinansijskaKartica.jsx" path="D:\diplomski\frontend\src\components\FinansijskaKartica.jsx">
+        <metrics statements="22" coveredstatements="22" conditionals="8" coveredconditionals="7" methods="7" coveredmethods="7"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="9" count="13" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="12" count="13" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="25" count="13" type="stmt"/>
+        <line num="26" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="60" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="84" count="3" type="stmt"/>
+        <line num="104" count="6" type="stmt"/>
+      </file>
+      <file name="NastavnikDashboard.jsx" path="D:\diplomski\frontend\src\components\NastavnikDashboard.jsx">
+        <metrics statements="64" coveredstatements="57" conditionals="52" coveredconditionals="40" methods="25" coveredmethods="21"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="29" type="stmt"/>
+        <line num="8" count="29" type="stmt"/>
+        <line num="9" count="29" type="stmt"/>
+        <line num="12" count="29" type="stmt"/>
+        <line num="13" count="29" type="stmt"/>
+        <line num="14" count="29" type="stmt"/>
+        <line num="17" count="29" type="stmt"/>
+        <line num="18" count="29" type="stmt"/>
+        <line num="20" count="29" type="stmt"/>
+        <line num="21" count="29" type="stmt"/>
+        <line num="23" count="29" type="stmt"/>
+        <line num="24" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="44" count="29" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="59" count="29" type="stmt"/>
+        <line num="60" count="3" type="stmt"/>
+        <line num="62" count="3" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="73" count="29" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+        <line num="75" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="77" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="101" count="3" type="stmt"/>
+        <line num="102" count="2" type="stmt"/>
+        <line num="141" count="9" type="stmt"/>
+        <line num="146" count="2" type="stmt"/>
+        <line num="184" count="2" type="stmt"/>
+        <line num="206" count="14" type="stmt"/>
+        <line num="207" count="14" type="stmt"/>
+        <line num="210" count="2" type="stmt"/>
+        <line num="249" count="3" type="stmt"/>
+        <line num="270" count="2" type="stmt"/>
+        <line num="294" count="63" type="stmt"/>
+        <line num="304" count="8" type="stmt"/>
+      </file>
+      <file name="Navbar.jsx" path="D:\diplomski\frontend\src\components\Navbar.jsx">
+        <metrics statements="10" coveredstatements="10" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="6" type="stmt"/>
+      </file>
+      <file name="StudentDashboard.jsx" path="D:\diplomski\frontend\src\components\StudentDashboard.jsx">
+        <metrics statements="30" coveredstatements="29" conditionals="15" coveredconditionals="15" methods="12" coveredmethods="11"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="16" type="stmt"/>
+        <line num="11" count="16" type="stmt"/>
+        <line num="12" count="16" type="stmt"/>
+        <line num="13" count="16" type="stmt"/>
+        <line num="15" count="16" type="stmt"/>
+        <line num="16" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="30" count="16" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="94" count="66" type="stmt"/>
+        <line num="104" count="6" type="stmt"/>
+      </file>
+      <file name="StudentDokumenti.jsx" path="D:\diplomski\frontend\src\components\StudentDokumenti.jsx">
+        <metrics statements="14" coveredstatements="14" conditionals="8" coveredconditionals="7" methods="5" coveredmethods="5"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="63" count="5" type="stmt"/>
+      </file>
+      <file name="StudentIspiti.jsx" path="D:\diplomski\frontend\src\components\StudentIspiti.jsx">
+        <metrics statements="20" coveredstatements="20" conditionals="26" coveredconditionals="17" methods="10" coveredmethods="10"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="24" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="31" count="3" type="cond" truecount="1" falsecount="2"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
+        <line num="100" count="5" type="stmt"/>
+      </file>
+      <file name="StudentPohadjanja.jsx" path="D:\diplomski\frontend\src\components\StudentPohadjanja.jsx">
+        <metrics statements="37" coveredstatements="31" conditionals="35" coveredconditionals="27" methods="8" coveredmethods="7"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="27" count="12" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="32" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="33" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="37" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="41" count="2" type="cond" truecount="4" falsecount="1"/>
+        <line num="42" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="73" count="8" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="114" count="5" type="stmt"/>
+      </file>
+      <file name="StudentPrijave.jsx" path="D:\diplomski\frontend\src\components\StudentPrijave.jsx">
+        <metrics statements="54" coveredstatements="48" conditionals="39" coveredconditionals="23" methods="20" coveredmethods="17"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="9" count="13" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="12" count="13" type="stmt"/>
+        <line num="14" count="13" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="31" count="13" type="stmt"/>
+        <line num="32" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="13" type="stmt"/>
+        <line num="36" count="12" type="cond" truecount="0" falsecount="1"/>
+        <line num="37" count="12" type="stmt"/>
+        <line num="40" count="13" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="60" count="13" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="124" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="126" count="7" type="stmt"/>
+        <line num="127" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="130" count="7" type="stmt"/>
+        <line num="131" count="3" type="cond" truecount="1" falsecount="2"/>
+        <line num="134" count="7" type="stmt"/>
+        <line num="135" count="3" type="cond" truecount="3" falsecount="2"/>
+        <line num="139" count="7" type="stmt"/>
+        <line num="140" count="3" type="cond" truecount="2" falsecount="3"/>
+        <line num="144" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="146" count="7" type="stmt"/>
+        <line num="164" count="1" type="stmt"/>
+        <line num="182" count="1" type="stmt"/>
+        <line num="207" count="5" type="stmt"/>
+      </file>
+      <file name="UplataForma.jsx" path="D:\diplomski\frontend\src\components\UplataForma.jsx">
+        <metrics statements="24" coveredstatements="24" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="37" type="stmt"/>
+        <line num="6" count="37" type="stmt"/>
+        <line num="7" count="37" type="stmt"/>
+        <line num="8" count="37" type="stmt"/>
+        <line num="10" count="37" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="15" count="5" type="cond" truecount="3" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
+        <line num="58" count="15" type="stmt"/>
+        <line num="68" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages">
+      <metrics statements="32" coveredstatements="31" conditionals="13" coveredconditionals="10" methods="5" coveredmethods="5"/>
+      <file name="Dashboard.jsx" path="D:\diplomski\frontend\src\pages\Dashboard.jsx">
+        <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="8" type="stmt"/>
+      </file>
+      <file name="Login.jsx" path="D:\diplomski\frontend\src\pages\Login.jsx">
+        <metrics statements="23" coveredstatements="22" conditionals="7" coveredconditionals="5" methods="4" coveredmethods="4"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="108" type="stmt"/>
+        <line num="8" count="108" type="stmt"/>
+        <line num="9" count="108" type="stmt"/>
+        <line num="10" count="108" type="stmt"/>
+        <line num="12" count="108" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="26" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="27" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="59" count="40" type="stmt"/>
+        <line num="71" count="48" type="stmt"/>
+        <line num="84" count="12" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
